@@ -1,0 +1,539 @@
+body {
+	background-color: #1b1a21;
+	color: #898797;
+	font-family: ubuntu;
+	font-size: 0.9em;
+}
+
+body header {
+	width: 70%;
+	margin: auto;
+}
+header.header {
+	position: fixed;
+	left: 15%;
+	z-index: 5;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 5px 10px;
+}
+header .item {
+	list-style: none;
+	padding: 0 20px;
+}
+
+header .item a {
+	position: relative;
+}
+header .item a::after,
+header .item a::before {
+	content: "";
+	height: 1.5px;
+	width: 0px;
+	position: absolute;
+	left: 0;
+	bottom: -5px;
+	transition-duration: 0.75s;
+	background-color: transparent;
+}
+header .item a:hover::after {
+	width: 100%;
+	transition-delay: 0.25s;
+	background-color: #ed3134;
+}
+header .item a:hover::before {
+	width: 100%;
+	background-color: #64b4b5;
+}
+
+header .menus {
+	display: none;
+}
+header .menus .bar {
+	height: 4px;
+	width: 100%;
+	background-color: #898797;
+}
+header .menus:hover .bar {
+	background-color: white;
+}
+header .bar.deux {
+	width: 80%;
+}
+header .bar.trois {
+	width: 60%;
+}
+
+main .banniere {
+	position: relative;
+	height: 100vh;
+	width: 100%;
+	padding: 0 10px;
+}
+main .banniere .boule {
+	position: absolute;
+	top: 20%;
+	left: 20%;
+	z-index: 2;
+	height: 20px;
+	width: 20px;
+	border-radius: 50%;
+}
+.boule .fill {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	background-color: #1b1a21;
+	border-radius: 50%;
+}
+.boule .fill::after {
+	position: absolute;
+	z-index: -1;
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+	background-color: yellow;
+	transform: scale(1.3);
+	content: "";
+}
+main .banniere .boule.top {
+	top: 0%;
+	left: 80%;
+}
+.boule.top .fill::after {
+	background: linear-gradient(transparent 50%, #ed3134);
+}
+main .banniere .boule.right {
+	top: 25%;
+	left: 80%;
+}
+.boule.right .fill::after {
+	background-color: #ed3134;
+}
+main .banniere .boule.middle {
+	top: 50%;
+	left: 45%;
+}
+.boule.middle .fill::after {
+	background: linear-gradient(-60deg, white 50%, transparent 50%);
+}
+main .banniere .boule.left {
+	top: 85%;
+	left: 10%;
+}
+.boule.left .fill::after {
+	background: linear-gradient(transparent 50%, #64b4b5 50%);
+}
+main .banniere .boule.bottom {
+	top: 85%;
+	left: 90%;
+}
+.boule.bottom .fill::after {
+	background: linear-gradient(#ed3134, yellow);
+}
+
+main .banniere .text {
+	font-size: 25em;
+	font-variant: small-caps;
+	color: #222959;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	padding: 30px;
+	transform: translate(-50%, -50%);
+}
+
+main .banniere .presentation {
+	position: absolute;
+	top: 50%;
+	left: 17.5%;
+	z-index: 4;
+	padding: 30px;
+	transform: translateY(-50%);
+}
+.presentation h1 {
+	color: white;
+	padding: 10px 0;
+}
+.presentation p {
+	padding: 5px 0;
+}
+.presentation a {
+	position: relative;
+	display: block;
+	width: max-content;
+	padding: 10px 15px;
+	margin: 10px 0;
+	color: white;
+	background: linear-gradient(30deg, #ed3134 70%, #e8563f);
+}
+.presentation a svg {
+	content: "";
+	position: absolute;
+	top: 50%;
+	right: -7.5px;
+	width: 25px;
+	transform: translateY(-50%);
+}
+
+main .Works {
+	min-height: 100vh;
+	background: #f1f1f1;
+	padding: 0 10px;
+}
+
+main .Works h2 {
+	color: #3b3b3b;
+	padding: 20px 0;
+	text-align: center;
+}
+main .container {
+	width: 100%;
+	padding: 20px 0;
+	padding-top: 0;
+	overflow: hidden;
+}
+main .container .card {
+	position: relative;
+	height: 300px;
+	width: 60%;
+	margin: 50px auto;
+	box-shadow: 0 0 25px #3b3b3b;
+	overflow: hidden;
+}
+.card::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -100%;
+	height: 100%;
+	width: 100%;
+	transition: 0.75s;
+	transition-delay: 0.25s;
+	background-color: #1f2b46e5;
+}
+.card::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -100%;
+	height: 100%;
+	width: 100%;
+	transition: 0.75s;
+	background-color: #ed3134a6;
+}
+.card .right {
+	position: absolute;
+	top: -25px;
+	right: -5px;
+	z-index: 2;
+	color: #898797;
+	font-weight: 900;
+	font-size: 9em;
+	opacity: 0;
+}
+.card .left {
+	position: absolute;
+	top: -25px;
+	left: 10px;
+	z-index: 2;
+	color: #898797;
+	font-weight: 900;
+	font-size: 9em;
+	opacity: 0;
+}
+.card img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+.card .presentation {
+	position: relative;
+}
+main .card:hover {
+	transform: scale(1.075);
+	margin-bottom: 70px;
+}
+main .card:hover .right,
+main .card:hover .left {
+	color: white;
+	transition-delay: 0.25s;
+	opacity: 1;
+}
+main .card:hover::after,
+main .card:hover::before {
+	left: 0%;
+}
+main .card .right + .presentation {
+	background: transparent;
+	position: absolute;
+	bottom: 0;
+	left: -100%;
+	z-index: 3;
+}
+main .card:hover .right + .presentation {
+	left: 20px;
+	bottom: 30px;
+}
+main .card .left + .presentation {
+	background: transparent;
+	position: absolute;
+	bottom: 0;
+	z-index: 3;
+	right: 100%;
+}
+main .card:hover .left + .presentation {
+	left: auto;
+	right: 20px;
+}
+
+main .competances {
+	width: 100%;
+	background: #f1f1f1;
+}
+main .competances h2 {
+	color: #3b3b3b;
+	padding: 30px 0;
+	text-align: center;
+	width: 100%;
+}
+.competances .container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	overflow-y: hidden;
+}
+.competances .carre {
+	position: relative;
+	z-index: 3;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 24.75vw;
+	width: 24.75vw;
+	background: white;
+	overflow: hidden;
+	box-shadow: -5px 0 35px #3b3b3b98;
+}
+.competances .carre::after {
+	content: "";
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: -100%;
+	z-index: -1;
+	background-color: #ed3134cb;
+}
+.competances .carre:hover::after {
+	left: 0;
+}
+.carre .boule {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 50%;
+	width: 50%;
+	background-color: #1b1a21;
+	border-radius: 50%;
+}
+main .contact {
+	position: relative;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.contact::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: -1;
+	height: 80vh;
+	width: 80vw;
+	transform: translate(-50%, -50%);
+	box-shadow: 0 0 25px #1b1a21;
+}
+.contact .left,
+.contact .right {
+	min-height: 80vh;
+	width: 40%;
+}
+.left {
+	background-color: #f1f1f1;
+}
+.right form {
+	height: 100%;
+	width: 100%;
+	padding-top: 50px;
+}
+form h3 {
+	color: white;
+}
+form h3,
+form p {
+	width: 80%;
+	padding: 5px 0;
+	margin: auto;
+}
+form p {
+	font-size: 0.7em;
+}
+form input,
+form textarea {
+	position: relative;
+	display: block;
+	width: 100%;
+	padding: 5px;
+	background: transparent;
+	border: none;
+	color: white;
+}
+form .input {
+	position: relative;
+	width: 80%;
+	margin: 15px auto;
+}
+form .input:hover::after {
+	width: 100%;
+	background: white;
+}
+form .input:hover::before {
+	width: 100%;
+	background: turquoise;
+}
+form .input::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 1px;
+	background: red;
+}
+form .input::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 0%;
+	height: 1px;
+	transition-delay: 0.25s;
+	background: transparent;
+}
+.input:focus,
+input:focus {
+	outline: none;
+}
+
+form button {
+	display: block;
+	padding: 5px;
+	margin: 20px auto;
+	margin-left: 10%;
+	background: transparent;
+	border: none;
+	color: white;
+}
+form input:hover,
+form textarea:hover {
+	outline: none;
+}
+
+main .footer {
+	min-height: 20vh;
+}
+.footer .logos {
+	color: white;
+	font-size: 2.5em;
+	text-align: center;
+	padding: 15px 0;
+	padding-top: 50px;
+}
+.liens {
+	display: flex;
+	justify-content: center;
+}
+.liens .item {
+	font-variant: small-caps;
+	font-weight: 700;
+	padding: 5px 20px;
+}
+.footer h3 {
+	text-align: center;
+	font-size: 0.6em;
+	padding: 10px 0;
+}
+
+@media screen and (max-width: 500px) {
+	body .content,
+	body header {
+		font-size: 0.85em;
+		width: 100%;
+	}
+	header.header {
+		left: 0%;
+	}
+	header .menus {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+		align-items: center;
+		height: 30px;
+		width: 30px;
+		margin-left: 10px;
+	}
+	header nav .item {
+		display: none;
+	}
+
+	main .banniere .presentation {
+		left: 10%;
+	}
+
+	main .banniere .boule {
+		height: 15px;
+		width: 15px;
+	}
+
+	main .banniere .boule {
+		top: 20%;
+		left: 60%;
+	}
+	main .banniere .boule.top {
+		top: 0%;
+		left: 50%;
+	}
+	main .banniere .boule.middle {
+		top: 17.5%;
+		left: 75%;
+	}
+	main .container .card {
+		width: 100%;
+	}
+	main .competances {
+		padding: 0 10px;
+	}
+	.competances .carre {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 98vw;
+		width: 98vw;
+		box-shadow: none;
+		margin-bottom: 20px;
+	}
+	main .contact {
+		min-height: 100vh;
+		padding-top: 10vh;
+		display: block;
+	}
+	.contact .left,
+	.contact .right {
+		min-height: 40vh;
+		width: 80%;
+		margin: auto;
+	}
+}
